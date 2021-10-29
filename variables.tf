@@ -12,7 +12,7 @@ variable "region_name" {
 
 variable "instance_type" {
   description = "Instance type"
-  default     = "t3.medium"
+  default     = "c4.xlarge"
   type        = string
 }
 
@@ -24,31 +24,31 @@ variable "ssh_user" {
 
 variable "ssh_key" {
   description = "Key name to use"
-  default     = "mminichino-default-key-pair"
+  default     = ""
   type        = string
 }
 
 variable "ssh_private_key" {
   description = "The private key to use when connecting to the instances"
-  default     = "/home/admin/.ssh/mminichino-default-key-pair.pem"
+  default     = ""
   type        = string
 }
 
 variable "subnet_id" {
   description = "Subnet to launch the instances in"
-  default     = "subnet-04a39c94478a470bc"
+  default     = ""
   type        = string
 }
 
 variable "vpc_id" {
   description = "VPC Id"
-  default     = "vpc-02140d5eb28cbe7f3"
+  default     = ""
   type        = string
 }
 
 variable "security_group_ids" {
   description = "Security group to assign to the instances"
-  default     = ["sg-0461893dc9f5472d1"]
+  default     = [""]
   type        = list(string)
 }
 
@@ -66,6 +66,6 @@ variable "root_volume_size" {
 
 variable "root_volume_type" {
   description = "The root volume type"
-  default     = "gp3"
+  default     = "gp2"
   type        = string
 }

@@ -118,12 +118,11 @@ while getopts "c" opt
 do
   case $opt in
     c)
-      if [ ! -f variables.clean -o ! -f cluster.clean ]; then
+      if [ ! -f variables.clean ]; then
          echo "Sanitized variable files not found."
          exit 1
       fi
       cp variables.clean variables.tf
-      cp cluster.clean cluster.tf
       exit
       ;;
     \?)
